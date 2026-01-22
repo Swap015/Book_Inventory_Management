@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 
 
 const bookSchema = new mongoose.Schema({
+
     title: {
         type: String,
         required: true,
@@ -13,7 +14,8 @@ const bookSchema = new mongoose.Schema({
         required: true
     },
     publisher: {
-        type: String
+        type: String,
+        required: true
     },
     publishedDate: {
         type: Date
@@ -22,7 +24,7 @@ const bookSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    description: {
+    overview: {
         type: String
     }
 },

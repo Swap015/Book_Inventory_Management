@@ -1,8 +1,10 @@
 
 import express from "express";
 import cors from "cors";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
+import bookRoutes from "./route/bookRoutes.mjs";
 
 
 const app = express();
@@ -24,8 +26,7 @@ mongoose.connect(MONGO_URI)
 
 
 
-
-    
+app.use("/books", bookRoutes);
 
 
 app.listen(PORT, () => {
