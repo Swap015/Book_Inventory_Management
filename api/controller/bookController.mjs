@@ -76,7 +76,7 @@ export const getBooks = async (req, res) => {
         const books = await Books.find().sort({ createdAt: -1 });
         res.status(200).json({
             msg: "Fetched all books",
-            data: books
+             books
         })
     }
     catch (err) {
