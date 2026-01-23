@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const BookTable = ({ books = [], onDelete }) => {
     const navigate = useNavigate();
@@ -43,22 +43,24 @@ const BookTable = ({ books = [], onDelete }) => {
                             </td>
                             <td className="border px-4 py-2">
                                 <div className="flex gap-2 justify-center">
-                                    <button
-                                        onClick={() => navigate(`/book/${book._id}`)}
-                                        className="px-3 py-1 text-sm bg-gray-500 text-white rounded hover:bg-gray-600"
+
+                                    <Link
+                                        to={`/book/${book._id}`}
+                                        className="px-3 py-1 text-sm bg-gray-400 font-bold text-black rounded hover:bg-gray-500"
                                     >
                                         View
-                                    </button>
+                                    </Link>
 
-                                    <button onClick={() => navigate(`/edit/${book._id}`)}
-                                        className="px-3 py-1 text-sm bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                                    <Link
+                                        to={`/edit/${book._id}`}
+                                        className="px-3 py-1 text-sm bg-yellow-500 text-black font-bold rounded hover:bg-yellow-600"
                                     >
                                         Edit
-                                    </button>
+                                    </Link>
 
                                     <button
                                         onClick={() => onDelete(book._id)}
-                                        className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"
+                                        className="px-3 py-1 text-sm bg-red-500 text-black font-bold rounded hover:bg-red-600"
                                     >
                                         Delete
                                     </button>

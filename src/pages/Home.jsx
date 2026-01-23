@@ -34,9 +34,8 @@ const Home = () => {
 
 
 
-
     return (
-        <div className="m-10 flex flex-col">
+        <div className="m-5 p-10 flex flex-col ">
 
             <div className="flex items-center justify-between mb-4">
                 <h2 className="text-3xl font-bold">
@@ -44,8 +43,8 @@ const Home = () => {
                 </h2>
 
                 <button
-                    onClick={() => navigate("/add")}
-                    className="bg-blue-500 px-4 py-2 rounded-full font-semibold text-white hover:bg-blue-600 transition"
+                    onClick={() => navigate("/add-Book")}
+                    className="bg-emerald-600 px-4 py-2 rounded-full font-semibold text-white hover:bg-emerald-700 transition"
                 >
                     Add Book
                 </button>

@@ -9,6 +9,8 @@ lerna-debug.log*
 
 
 .env
+api
+
 
 node_modules
 dist
