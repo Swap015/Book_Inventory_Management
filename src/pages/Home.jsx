@@ -15,7 +15,7 @@ const Home = () => {
 
         const getBooks = async () => {
             const res = await axios.get(`${API_URL}`);
-            setBooks(res.data);
+            setBooks(res.data.books);
         };
         getBooks();
 
@@ -28,7 +28,7 @@ const Home = () => {
             await axios.delete(`${API_URL}/${id}`);
 
             const res = await axios.get(`${API_URL}`);
-            setBooks(res.data)
+            setBooks(res.data.books)
         }
     }
 
@@ -36,14 +36,20 @@ const Home = () => {
 
 
     return (
-        <div>
-            <h2 className="text-2xl font-bold mb-4">
-                Books Inventory
-            </h2>
+        <div className="m-10 flex flex-col">
 
+            <div className="flex items-center justify-between mb-4">
+                <h2 className="text-3xl font-bold">
+                    Books Inventory
+                </h2>
 
-            <button onClick={() => navigate("/add")}>Add Book</button>
-
+                <button
+                    onClick={() => navigate("/add")}
+                    className="bg-blue-500 px-4 py-2 rounded-full font-semibold text-white hover:bg-blue-600 transition"
+                >
+                    Add Book
+                </button>
+            </div>
 
             <BookTable books={books} onDelete={deleteBook} />
 
