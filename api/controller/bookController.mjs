@@ -20,7 +20,10 @@ export const addBook = async (req, res) => {
             overview
         });
 
-        res.status(201).json({ msg: "Added a book", data: newBook });
+        res.status(201).json({
+            msg: "Added a book",
+            data: newBook
+        });
     }
     catch (err) {
         res.status(500).json({ message: err.message });
@@ -40,7 +43,10 @@ export const editBook = async (req, res) => {
             return res.status(404).json({ message: "Book not found" });
         }
 
-        res.status(200).json({ msg: "Book Updated", data: updatedBook });
+        res.status(200).json({
+            msg: "Book Updated",
+            data: updatedBook
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -55,7 +61,10 @@ export const getBook = async (req, res) => {
             return res.status(404).json({ message: "Book not found" });
         }
 
-        res.status(200).json({ msg: "Fetched book", data: book });
+        res.status(200).json({
+            msg: "Fetched book",
+            data: book
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -65,7 +74,10 @@ export const getBooks = async (req, res) => {
     try {
 
         const books = await Books.find().sort({ createdAt: -1 });
-        res.status(200).json({ msg: "Fetched all books", data: books })
+        res.status(200).json({
+            msg: "Fetched all books",
+            data: books
+        })
     }
     catch (err) {
         res.status(500).json({ message: err.message });

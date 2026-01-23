@@ -26,7 +26,7 @@ mongoose.connect(MONGO_URI)
 
 
 
-app.use("/books", bookRoutes);
+app.use("/api/books", bookRoutes);
 
 
 app.listen(PORT, () => {
