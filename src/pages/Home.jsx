@@ -44,7 +44,7 @@ const Home = () => {
 
                 <button
                     onClick={() => navigate("/add-Book")}
-                    className="bg-emerald-600 px-5 py-2 rounded-full font-semibold text-white hover:bg-emerald-700 transition w-full sm:w-auto"
+                    className="bg-emerald-600 px-5 py-2 rounded-full font-semibold text-white hover:bg-emerald-700 transition  w-auto sm:w-auto self-center sm:self-auto"
                 >
                     Add Book
                 </button>
