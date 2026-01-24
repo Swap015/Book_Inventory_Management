@@ -9,7 +9,17 @@ import bookRoutes from "./route/bookRoutes.mjs";
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+
+    "http://localhost:5173",
+    process.env.FRONTEND_URL
+
+];
+
+app.use(cors({
+    origin: allowedOrigins
+}));
+
 app.use(express.json());
 
 const PORT = process.env.PORT;

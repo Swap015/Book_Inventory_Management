@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BookTable = ({ books = [], onDelete }) => {
-    const navigate = useNavigate();
+
 
     return (
         <div className="mt-4 max-h-[400px] overflow-y-auto border rounded-lg shadow">
@@ -30,7 +30,7 @@ const BookTable = ({ books = [], onDelete }) => {
                     ) : (books.map((book) => (
                         <tr
                             key={book._id}
-                            className="hover:bg-gray-50"
+                            className="hover:bg-blue-100"
                         >
                             <td className="border px-4 py-2">
                                 {book.title}
@@ -60,7 +60,7 @@ const BookTable = ({ books = [], onDelete }) => {
 
                                     <button
                                         onClick={() => onDelete(book._id)}
-                                        className="px-3 py-1 text-sm bg-red-500 text-black font-bold rounded hover:bg-red-600"
+                                        className="px-3 py-1 text-sm bg-red-500 text-black font-bold rounded hover:bg-red-600 cursor-pointer"
                                     >
                                         Delete
                                     </button>
