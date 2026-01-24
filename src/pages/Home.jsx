@@ -35,22 +35,24 @@ const Home = () => {
 
 
     return (
-        <div className="m-5 p-10 flex flex-col ">
+        <div className="m-4 sm:m-6 lg:m-10 p-4 sm:p-6 lg:p-10 flex flex-col lg:gap-6">
 
-            <div className="flex items-center justify-between mb-4">
-                <h2 className="text-3xl font-bold">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">
                     Books Inventory
                 </h2>
 
                 <button
                     onClick={() => navigate("/add-Book")}
-                    className="bg-emerald-600 px-4 py-2 rounded-full font-semibold text-white hover:bg-emerald-700 transition"
+                    className="bg-emerald-600 px-5 py-2 rounded-full font-semibold text-white hover:bg-emerald-700 transition w-full sm:w-auto"
                 >
                     Add Book
                 </button>
             </div>
 
-            <BookTable books={books} onDelete={deleteBook} />
+            <div className="overflow-x-auto">
+                <BookTable books={books} onDelete={deleteBook} />
+            </div>
 
 
         </div >

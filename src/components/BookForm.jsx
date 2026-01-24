@@ -39,9 +39,9 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
 
         <form
             onSubmit={handleSubmit}
-            className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md space-y-4 flex flex-col justify-center items-center"
+            className="w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:bg-white p-4 sm:p-6 rounded-lg shadow-md space-y-3 sm:space-y-4 shadow-none sm:shadow-3xl sm:shadow-black sm:border sm:border-gray-400"
         >
-            <h2 className="text-2xl font-semibold text-center">{buttonText}</h2>
+            <h2 className="text-2xl font-semibold text-center mb-5">{buttonText}</h2>
 
             <input
                 type="text"
@@ -49,7 +49,7 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
                 placeholder="Title *"
                 value={book.title}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-1.5 sm:p-2 rounded"
             />
 
             <input
@@ -58,7 +58,8 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
                 placeholder="Author *"
                 value={book.author}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-1.5 sm:p-2 rounded"
+
             />
 
             <input
@@ -67,7 +68,8 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
                 placeholder="Publisher *"
                 value={book.publisher}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-1.5 sm:p-2 rounded"
+
             />
 
             <input
@@ -75,7 +77,8 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
                 name="publishedDate"
                 value={book.publishedDate}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-1.5 sm:p-2 rounded"
+
             />
 
             <input
@@ -84,7 +87,8 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
                 placeholder="Price *"
                 value={book.price}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-1.5 sm:p-2 rounded"
+
             />
 
             <textarea
@@ -92,22 +96,22 @@ const BookForm = ({ initialData = {}, onSubmit, buttonText }) => {
                 placeholder="Overview"
                 value={book.overview}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border p-1.5 sm:p-2 rounded"
                 rows="4"
             />
 
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex gap-4 justify-center items-center">
 
                 <button type="button"
                     onClick={() => navigate(-1)}
-                    className="bg-gray-400 text-black font-bold px-4 py-2 rounded hover:bg-gray-500"
+                    className="bg-gray-400 text-black font-bold px-4 py-2 lg:px-5 rounded hover:bg-gray-500"
                 >
                     Back
                 </button>
 
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700"
+                    className=" bg-blue-600 text-white px-2 py-2 rounded hover:bg-blue-700 lg:px-4"
                 >
                     {buttonText}
                 </button>

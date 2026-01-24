@@ -27,12 +27,12 @@ const BookDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 py-10 px-4">
-            <div className="max-w-xl mx-auto bg-white p-3 rounded shadow flex flex-col justify-center items-center">
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center px-5 py-6 ">
+            <div className="max-w-xl mx-auto bg-white p-8 rounded shadow-3xl shadow-black border border-gray-400 flex flex-col justify-center items-center">
 
-                <h2 className="text-3xl font-bold mb-4">{book.title}</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-4">{book.title}</h2>
 
-                <div className="space-y-2 text-gray-700">
+                <div className="space-y-2 md:space-y-4 text-gray-700">
                     <p><span className="font-semibold">Author:</span> {book.author}</p>
                     <p><span className="font-semibold">Publisher:</span> {book.publisher}</p>
                     <p><span className="font-semibold">Published Date:</span> {book.publishedDate || "N/A"}</p>
