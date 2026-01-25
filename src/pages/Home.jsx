@@ -9,14 +9,23 @@ const Home = () => {
     const API_URL = import.meta.env.VITE_API_URL;
 
     const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
 
         const getBooks = async () => {
-            const res = await axios.get(`${API_URL}`);
-            setBooks(res.data.books);
+            try {
+                setLoading(true);
+                const res = await axios.get(`${API_URL}`);
+                setBooks(res.data.books);
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
         };
+
         getBooks();
 
     }, [API_URL]);
@@ -51,7 +60,7 @@ const Home = () => {
             </div>
 
             <div className="overflow-x-auto">
-                <BookTable books={books} onDelete={deleteBook} />
+                <BookTable books={books} onDelete={deleteBook} loading={loading} />
             </div>
 
 

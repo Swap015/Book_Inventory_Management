@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 
-const BookTable = ({ books = [], onDelete }) => {
+const BookTable = ({ books = [], loading, onDelete }) => {
 
+    if (loading) {
+        return (
+            <div className="text-center py-10 text-lg font-semibold text-gray-500">
+                Loading books...
+            </div>
+        );
+    }
 
     return (
         <div className="">
